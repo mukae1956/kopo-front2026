@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const jsonUrl = 'https://prof-jwchi.github.io/kopo-front2026/Json/baseball.json';
+
+        fetch(jsonUrl)
+            .then(response => response.json())
+            .then(data => {
+                let list = data.list;
+                let tbody = document.querySelector("table tbody"); // tbody 선택
+                tbody.innerHTML = ""; // 기존 내용 초기화
+
+                for (let i = 0; i < list.length; i++) {
+                    let team = list[i];
+
+                    let tr = document.createElement("tr");
+
+                    tr.innerHTML = `
+                        <td>${i + 1}</td>
+                        <td>${team.shortNameKo}</td>
+                        <td>${team.rank.game}</td>
+                        <td>${team.rank.win}</td>
+                        <td>${team.rank.draw}</td>
+                        <td>${team.rank.loss}</td>
+                        <td>${team.rank.wpct}</td>
+                        <td>${team.rank.gb}</td>
+                        <td>${team.rank.streak}</td>
+                        `;
+
+                    tbody.appendChild(tr);
+        }
+                    });
+    </script>
+    <style>
+        #content{
+            width:100%;
+            height : 1000px;
+            background-color : white;
+            display : flex;
+        }
+
+        .content>div>div {
+            color: white;
+            line-height: 100px;
+            font-size: 40px;
+            width: 100px;
+            height: 100px;
+        }
+        .one{
+            position : absolute;
+            width : 80px;
+            height : 30px;
+            text-align:center;
+            top : 20px;
+            left : 50px;
+        }
+        .two{
+            position: absolute;
+            width: 90px;
+            height : 30px;
+            text-align:center;
+            top : 20px;
+            left: 130px;
+        }
+        .three{
+            position:absolute;
+            width:1000px;
+            height: 1000px;
+            top: 50px;
+            text-align:center;
+            
+        }
+        .lg{
+            position:absolute;
+            top:105px;
+            left : 100px;
+        }
+        .hh{
+            position:absolute;
+            top:206px;
+            left : 100px;
+        }
+        .ss{
+            position:absolute;
+            top:301px;
+            left : 100px;
+        }
+        .sm{
+            position:absolute;
+            top:400px;
+            left : 100px;
+        }
+        .nc{
+            position:absolute;
+            top:497px;
+            left : 100px;
+        }
+        .kt{
+            position:absolute;
+            top:595px;
+            left : 100px;
+        }
+        .lt{
+            position:absolute;
+            top:691px;
+            left : 100px;
+        }
+        .ki{
+            position:absolute;
+            top:789px;
+            left : 100px;
+        }
+        .ds{
+            position:absolute;
+            top:887px;
+            left : 100px;
+        }
+        .kw{
+            position:absolute;
+            top:982px;
+            left : 100px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class = "one" style = "color:red;">KBO 리그</div>
+        <div class = "two">퓨처스 리그</div>
+        <table class = "three">
+            <tbody>
+                <thead>
+                    <th>순위</th>
+                    <th>팀</th>
+                    <th>경기</th>
+                    <th>승</th>
+                    <th>무</th>
+                    <th>패</th>
+                    <th style="color:rgb(19, 149, 255)">승률</th>
+                    <th>게임차</th>
+                    <th>연속</th>
+
+                </thead>
+
+            </tbody>
+                
+            </table>
+            <div class="lg"><img src="http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/LG_300300.png" width = 40px height = 40px ></div>
+            <div class="hh"><img src="http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/HH_300300.png" width = 40px height = 40px ></div>
+            <div class="ss"><img src="http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/SK_300300.png" width = 40px height = 40px ></div>
+            <div class="sm"><img src="http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/SS_300300.png" width = 40px height = 40px ></div>
+            <div class="nc"><img src="http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/NC_300300.png" width = 40px height = 40px ></div>
+            <div class="kt"><img src="http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/KT_300300.png" width = 40px height = 40px ></div>
+            <div class="lt"><img src="http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/LT_300300.png" width = 40px height = 40px ></div>
+            <div class="ki"><img src="http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/HT_300300.png" width = 40px height = 40px ></div>
+            <div class="ds"><img src="http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/OB_300300.png" width = 40px height = 40px ></div>
+            <div class="kw"><img src="http://t1.daumcdn.net/media/img-section/sports13/logo/team/1/WO_300300.png" width = 40px height = 40px ></div>
+        </div>
+</table>
+</body>
+</html>
